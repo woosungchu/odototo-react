@@ -1,0 +1,12 @@
+node_modules
+*.log
+
+# Build
+build/*
+public/bundle.js
+
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
