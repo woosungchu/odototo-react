@@ -6,27 +6,18 @@ const app = express();
 const port = 3000;
 const devPort = 3001;
 
-
 if(process.env.NODE_ENV == 'development') {
-    console.log('Server is running on development mode');
+    console.log(' ########## Development mode ########## ');
 
     const config = require('../webpack.dev.config');
     let compiler = webpack(config);
     let devServer = new WebpackDevServer(compiler, config.devServer);
     devServer.listen(devPort, () => {
-        console.log('webpack-dev-server is listening on port', devPort);
+        console.log(' Webpack-dev-server on port', devPort);
     });
 }
 app.use('/', express.static(__dirname + '/../public'));
 
-app.get('/hello', (req, res) => {
-    return res.send('Can you hear me?');
-});
-
-
-import posts from './routes/posts';
-app.use('/posts', posts);
-
 const server = app.listen(port, () => {
-    console.log('Express listening on port', port);
+    console.log(' Express on port', port);
 });

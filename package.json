@@ -7,8 +7,8 @@
     "clean": "rm -rf build public/bundle.js",
     "babel": "babel server --out-dir build",
     "webpack": "./node_modules/.bin/webpack",
-    "start": "set NODE_ENV=production&&node ./build/main.js",
-    "development": "set NODE_ENV=development&&node ./build/main.js"
+    "start": "set NODE_ENV=production&&node ./build/app.js",
+    "development": "set NODE_ENV=development&&node ./build/app.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
   "homepage": "https://github.com/woosungchu/odototo-react#readme",
   "dependencies": {
     "express": "^4.15.3",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
