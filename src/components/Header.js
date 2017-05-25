@@ -14,9 +14,9 @@ class Header extends React.Component {
   now(){
     let currentdate = new Date();
 
-    return currentdate.getDate() + "-"
+    return currentdate.getFullYear() + "-"
             + (currentdate.getMonth()+1)  + "-"
-            + currentdate.getFullYear()
+            + currentdate.getDate()
   }
 
   render(){
