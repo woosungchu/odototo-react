@@ -19,9 +19,9 @@ if(process.env.NODE_ENV == 'development') {
 app.use('/', express.static(__dirname + '/../public'));
 
 /* react-router */
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './../public/index.html'));
-});
+//app.get('*', (req, res) => {
+//    res.sendFile(path.resolve(__dirname, './../public/index.html'));
+//});
 
 const server = app.listen(port, () => {
     console.log(' Express on port', port);

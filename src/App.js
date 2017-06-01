@@ -8,7 +8,7 @@ const App = () => {
         <Router>
             <div>
                 <Header/>
-                <div>
+                <div className="container">
                     <Switch>
                         <Route exact path="/" component={Home}/>
                         <Route path="/blank" component={Blank}/>

@@ -3,7 +3,7 @@ import { Route, Link } from 'react-router-dom';
 
 const Home = () => {
     return (
-      <div className="container">
+      <div>
         <div className="row">
           <div className="col-lg-12">
               <h1 className="page-header">
