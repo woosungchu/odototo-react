@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = {
     // 가장 처음 읽을 스크립트파일
     // 여기서부터 import 되어있는 다른 스크립트를 불러온다.
@@ -7,6 +9,10 @@ module.exports = {
     output: {
         path: __dirname + '/public',
         filename: 'bundle.js'
+    },
+
+    resolve: {
+      modules: [path.resolve(__dirname, "src"), "node_modules"]
     },
 
     // ES6 문법과 JSX 문법을 사용한다

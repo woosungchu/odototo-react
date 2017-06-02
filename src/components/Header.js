@@ -1,42 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
+// import './Header.css';
 
-
-class Header extends React.Component {
-  constructor(props){
-    super(props);
-
-    this.state = {
-         time: this.now()
-     };
-  }
-
-  now(){
-    let currentdate = new Date();
-
-    return currentdate.getFullYear() + "-"
-            + (currentdate.getMonth()+1)  + "-"
-            + currentdate.getDate()
-  }
-
-  render(){
-      return (
-        <nav className="navbar navbar-default">
-          <div className="container-fluid">
-            <div className="navbar-header">
-              <a className="navbar-brand" href="#">{ this.props.title }</a>
-            </div>
-            <ul className="nav navbar-nav navbar-right">
-              <li><a href="#"><span>{ this.state.time }</span></a></li>
-            </ul>
+const Header = () => {
+    return (
+      <nav className="navbar navbar-default">
+        <div className="container-fluid">
+          <div className="navbar-header">
+            <NavLink exact to="/" className="navbar-brand" activeClassName="active">
+              오동통통
+            </NavLink>
           </div>
-        </nav>
-      );
-  }
-}
-
-Header.propTypes = {
-    title: PropTypes.string.isRequired
+        </div>
+      </nav>
+    );
 };
 
 export default Header;

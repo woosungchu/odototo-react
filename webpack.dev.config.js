@@ -1,5 +1,6 @@
 //webpack 플러그인을 사용하기위하여 해당 모듈을 import 합니다.
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
 
@@ -15,6 +16,10 @@ module.exports = {
     output: {
         path: '/',
         filename: 'bundle.js'
+    },
+
+    resolve: {
+      modules: [path.resolve(__dirname, "src"), "node_modules"]
     },
 
     //webpack-dev-server 를 위한 설정입니다. proxy 부분은 Express.js 서버 URI를 넣어주어야합니다.
