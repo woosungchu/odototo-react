@@ -14,6 +14,9 @@ module.exports = {
     resolve: {
       modules: [path.resolve(__dirname, "src"), "node_modules"]
     },
+    resolveLoader: {
+    	moduleExtensions: ["-loader"]
+    },
 
     // ES6 문법과 JSX 문법을 사용한다
     module: {
@@ -26,6 +29,9 @@ module.exports = {
                     cacheDirectory: true,
                     presets: ['es2015', 'react']
                 }
+            },{
+                test: /\.scss$/,
+                loaders: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     }

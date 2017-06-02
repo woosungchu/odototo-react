@@ -21,6 +21,9 @@ module.exports = {
     resolve: {
       modules: [path.resolve(__dirname, "src"), "node_modules"]
     },
+    resolveLoader: {
+    	moduleExtensions: ["-loader"]
+    },
 
     //webpack-dev-server 를 위한 설정입니다. proxy 부분은 Express.js 서버 URI를 넣어주어야합니다.
     devServer: {
@@ -52,6 +55,9 @@ module.exports = {
                     presets: ['es2015', 'react']
                 })],
                 exclude: /node_modules/,
+            },{
+                test: /\.scss$/,
+                loaders: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     }
