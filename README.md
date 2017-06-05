@@ -15,5 +15,5 @@ $ npm install -g babel-cli
 #### References
 - [Tutorial](https://velopert.com/1492)
 - [Redux express repo](https://github.com/woosungchu/redux-express)
-- [lastest version in ember](https://github.com/woosungchu/odototo)
-- [Before you deploy app to Elastic Beanstalk](http://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/eb-cli3-getting-started.html)
+- [Redux Todo example](https://github.com/reactjs/redux/tree/master/examples/todos)
+- [odototo in ember](https://github.com/woosungchu/odototo)
