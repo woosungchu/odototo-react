@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Converter = ({text, word, onConvert, onCopy, onPrint, onCancel}) => (
+const Converter = ({source, text, onConvert, onCopy, onPrint, onCancel}) => (
     <div>
         <div id="blank-converter" className="row">
         <div className="col-sm-6">
           <div className="form-group">
-              <textarea className="form-control editor" placeholder="Message" ></textarea>
+              <textarea value={source} className="form-control editor" placeholder="Message" ></textarea>
           </div>
         </div>
         <div className="col-sm-6">

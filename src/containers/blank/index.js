@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 
 // store 안의 state 값을 props 로 연결해줍니다.
 const mapStateToProps = (state) => ({
-	text: state.blankData.text,
-	word: state.wordData.word
+	source: state.blankData.source,
+	text: state.blankData.text
 });
 
 
-/* 
+/*
     액션 생성자를 사용하여 액션을 생성하고,
     해당 액션을 dispatch 하는 함수를 만들은 후, 이를 props 로 연결해줍니다.
 */

@@ -1,6 +1,7 @@
 import { BLANK_CONVERT, BLANK_COPY, BLANK_CANCEL } from 'actions/blank';
 
 const blankInitialState = {
+    source: '',
     text: ''
 };
 
@@ -8,7 +9,7 @@ const blank = (state = blankInitialState, action) => {
     switch(action.type) {
         case BLANK_CONVERT:
             return Object.assign({}, state, {
-                value: state.value + state.diff
+                text: state.source
             });
         case BLANK_COPY:
             return Object.assign({}, state, {
