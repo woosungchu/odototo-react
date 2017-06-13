@@ -13,7 +13,8 @@ $ npm install -g babel-cli
 ```
 
 #### References
-- [Tutorial](https://velopert.com/1492)
+- [React Environment Tutorial](https://velopert.com/1492)
+- [Redux Tutorial](https://velopert.com/3346)
 - [Redux express repo](https://github.com/woosungchu/redux-express)
 - [Redux Todo example](https://github.com/reactjs/redux/tree/master/examples/todos)
 - [odototo in ember](https://github.com/woosungchu/odototo)
