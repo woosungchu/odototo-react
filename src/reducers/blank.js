@@ -10,7 +10,7 @@ const blank = (state = blankInitialState, action) => {
     switch(action.type) {
         case BLANK_CONVERT:
             return Object.assign({}, state, {
-                text : state.source //action.text
+                text : state.source
             });
         case BLANK_COPY:
             return Object.assign({}, state, {

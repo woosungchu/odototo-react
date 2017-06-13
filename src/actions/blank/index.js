@@ -4,10 +4,9 @@ export const BLANK_PRINT = 'BLANK_PRINT';
 export const BLANK_CANCEL = 'BLANK_CANCEL';
 export const BLANK_TEXTAREA_CHANGE = 'BLANK_TEXTAREA_CHANGE';
 
-export function convert(/*source*/) {
+export function convert() {
     return {
-        type: BLANK_CONVERT/*,
-        text: source*/
+        type: BLANK_CONVERT
     };
 }
 

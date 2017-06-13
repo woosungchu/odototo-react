@@ -22,11 +22,7 @@ const Converter = ({source, text, onConvert, onCopy, onPrint, onCancel, onTextar
       <div className="pull-right">
 	      <span id="blank-msg" className="message" style={{display:'none'}}>copied</span>
 	      <a href="#" className="btn btn-primary"
-            onClick={(e)=>{
-              e.preventDefault();
-              // onConvert('source test');
-              onConvert();
-            }} >
+            onClick={onConvert} >
             convert
         </a>
 	      <a href="#" className="btn btn-default" onClick={onCopy}>copy</a>
@@ -42,7 +38,8 @@ Converter.defaultProps = {
     onConvert: () => console.warn('onConvert not defined'),
     onCopy: () => console.warn('onCopy not defined'),
     onPrint: () => console.warn('onPrint not defined'),
-    onCancel: () => console.warn('onCancel not defined')
+    onCancel: () => console.warn('onCancel not defined'),
+    onTextareaChange: () => console.warn('onTextareaChange not defined')
 };
 
 export default Converter;
