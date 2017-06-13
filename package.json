@@ -29,6 +29,7 @@
   "homepage": "https://github.com/woosungchu/odototo-react#readme",
   "dependencies": {
     "express": "^4.15.3",
+    "node-sass": "^4.5.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
