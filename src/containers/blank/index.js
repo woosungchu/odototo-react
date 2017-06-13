@@ -14,13 +14,13 @@ const mapStateToProps = (state) => ({
     해당 액션을 dispatch 하는 함수를 만들은 후, 이를 props 로 연결해줍니다.
 */
 const mapDispatchToProps = (dispatch) => ({
-    onConvert: () => {
-        const text = 'testText';
+    onConvert: (text) => {
         dispatch(actions.convert(text));
     },
     onCopy: () => dispatch(actions.copy()),
     onPrint: () => dispatch(actions.print()),
-    onCancel: () => dispatch(actions.cancel())
+    onCancel: () => dispatch(actions.cancel()),
+		onTextareaChange: (e) => dispatch(actions.onTextareaChange(e.target.value))
 });
 
 // Counter 컴포넌트의 Container 컴포넌트

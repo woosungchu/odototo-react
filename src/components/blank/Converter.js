@@ -1,11 +1,16 @@
 import React from 'react';
 
-const Converter = ({source, text, onConvert, onCopy, onPrint, onCancel}) => (
+const Converter = ({source, text, onConvert, onCopy, onPrint, onCancel, onTextareaChange}) => (
     <div>
         <div id="blank-converter" className="row">
         <div className="col-sm-6">
           <div className="form-group">
-              <textarea value={source} className="form-control editor" placeholder="Message" ></textarea>
+              <textarea defaultValue={source}
+                onChange={onTextareaChange}
+                className="form-control editor"
+                placeholder="Message"
+                >
+              </textarea>
           </div>
         </div>
         <div className="col-sm-6">
@@ -16,7 +21,14 @@ const Converter = ({source, text, onConvert, onCopy, onPrint, onCancel}) => (
       </div>
       <div className="pull-right">
 	      <span id="blank-msg" className="message" style={{display:'none'}}>copied</span>
-	      <a href="#" className="btn btn-primary" onClick={onConvert} >convert</a>
+	      <a href="#" className="btn btn-primary"
+            onClick={(e)=>{
+              e.preventDefault();
+              // onConvert('source test');
+              onConvert();
+            }} >
+            convert
+        </a>
 	      <a href="#" className="btn btn-default" onClick={onCopy}>copy</a>
 	      <a href="#" className="btn btn-default" onClick={onPrint}>print</a>
 	      <a href="#" className="btn btn-default" onClick={onCancel}>cancel</a>
@@ -25,8 +37,8 @@ const Converter = ({source, text, onConvert, onCopy, onPrint, onCancel}) => (
 )
 
 Converter.defaultProps = {
-    text: 0,
-    word: 'black',
+    text: '',
+    source: '',
     onConvert: () => console.warn('onConvert not defined'),
     onCopy: () => console.warn('onCopy not defined'),
     onPrint: () => console.warn('onPrint not defined'),

@@ -1,4 +1,4 @@
-import { BLANK_CONVERT, BLANK_COPY, BLANK_CANCEL } from 'actions/blank';
+import { BLANK_CONVERT, BLANK_COPY, BLANK_CANCEL, BLANK_TEXTAREA_CHANGE } from 'actions/blank';
 
 const blankInitialState = {
     source: '',
@@ -6,10 +6,11 @@ const blankInitialState = {
 };
 
 const blank = (state = blankInitialState, action) => {
+
     switch(action.type) {
         case BLANK_CONVERT:
             return Object.assign({}, state, {
-                text: state.source
+                text : state.source //action.text
             });
         case BLANK_COPY:
             return Object.assign({}, state, {
@@ -18,6 +19,11 @@ const blank = (state = blankInitialState, action) => {
         case BLANK_CANCEL:
             return Object.assign({}, state, {
                 diff: action.diff
+            });
+        case BLANK_TEXTAREA_CHANGE:
+            console.log(action.source)
+            return Object.assign({}, state, {
+                source: action.source
             });
         default:
             return state;
