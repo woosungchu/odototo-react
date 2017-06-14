@@ -14,8 +14,7 @@ const Converter = ({source, text, onConvert, onCopy, onPrint, onCancel, onTextar
           </div>
         </div>
         <div className="col-sm-6">
-          <div id="blank-editor" className="editor">
-          {text}
+          <div id="blank-editor" className="editor" dangerouslySetInnerHTML={ {__html: text} }>
           </div>
         </div>
       </div>

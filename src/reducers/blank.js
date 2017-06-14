@@ -9,8 +9,16 @@ const blank = (state = blankInitialState, action) => {
 
     switch(action.type) {
         case BLANK_CONVERT:
+        	let initText = '';
+        	
+        	initText = state.source
+        					.replace(/([^\u0000-\u007F]|\w|\.|-)+[^\s\.,!?'")]/g, function(word){
+				                return '<span>'+word+'</span>'
+				            })
+				            .replace(/\r?\n/, "<br/>");
+        	
             return Object.assign({}, state, {
-                text : state.source
+                text : initText
             });
         case BLANK_COPY:
             return Object.assign({}, state, {
@@ -21,7 +29,6 @@ const blank = (state = blankInitialState, action) => {
                 diff: action.diff
             });
         case BLANK_TEXTAREA_CHANGE:
-            console.log(action.source)
             return Object.assign({}, state, {
                 source: action.source
             });
