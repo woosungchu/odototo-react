@@ -2,7 +2,8 @@ import { BLANK_CONVERT, BLANK_COPY, BLANK_CANCEL, BLANK_TEXTAREA_CHANGE } from '
 
 const blankInitialState = {
     source: '',
-    text: ''
+    text: '',
+    converted: false
 };
 
 const blank = (state = blankInitialState, action) => {
@@ -18,7 +19,8 @@ const blank = (state = blankInitialState, action) => {
 				            .replace(/\r?\n/, "<br/>");
         	
             return Object.assign({}, state, {
-                text : initText
+                text : initText,
+                converted : true
             });
         case BLANK_COPY:
             return Object.assign({}, state, {

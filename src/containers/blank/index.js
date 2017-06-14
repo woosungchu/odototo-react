@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 // store 안의 state 값을 props 로 연결해줍니다.
 const mapStateToProps = (state) => ({
 	source: state.blankData.source,
-	text: state.blankData.text
+	text: state.blankData.text,
+	converted: state.blankData.converted
 });
 
 

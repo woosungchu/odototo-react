@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Converter = ({source, text, onConvert, onCopy, onPrint, onCancel, onTextareaChange}) => (
+const Converter = ({source, text, converted, onConvert, onCopy, onPrint, onCancel, onTextareaChange}) => (
     <div>
         <div id="blank-converter" className="row">
         <div className="col-sm-6">
@@ -9,6 +9,7 @@ const Converter = ({source, text, onConvert, onCopy, onPrint, onCancel, onTextar
                 onChange={onTextareaChange}
                 className="form-control editor"
                 placeholder="Message"
+                disabled={converted && 'disabled' }
                 >
               </textarea>
           </div>
@@ -34,6 +35,7 @@ const Converter = ({source, text, onConvert, onCopy, onPrint, onCancel, onTextar
 Converter.defaultProps = {
     text: '',
     source: '',
+    converted: false,
     onConvert: () => console.warn('onConvert not defined'),
     onCopy: () => console.warn('onCopy not defined'),
     onPrint: () => console.warn('onPrint not defined'),
